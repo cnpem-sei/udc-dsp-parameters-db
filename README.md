@@ -1,4 +1,4 @@
-# Database for control coefficients for Sirius Power Supplies {#mainpage}
+# Database for control coefficients for Sirius power supplies
 
 Database for coefficients for digital signal processing module (dsp_module) from digital controllers of Sirius power supplies. This module contains the following functions used on implementations of control laws:
 
