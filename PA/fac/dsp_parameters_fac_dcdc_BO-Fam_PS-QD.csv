@@ -1,20 +1,20 @@
-# Control parameters for power supply from SD sextupoles family of booster.
+# Control parameters for power supply from QD quadrupoles family of booster.
 # =============================================================================
 #
-# PS Name:  BO-Fam:PS-SD
+# PS Name:  BO-Fam:PS-QD
 # PS Model: FAC_DCDC
 #
 # Nominal operation point:
 #
-#   Load inductance:            0.00077 H
-#   Load resistance:            0.194 Ohm
-#   Load current:               149 A
+#   Load inductance:            0.107 H
+#   Load resistance:            0.868 Ohm
+#   Load current:               30 A
 #   DC-Link voltage:            58 V
 #
 # =============================================================================
 
-# Reference slew-rate of 1200 A/s for ramp operation in SlowRef
-DSP_SRLim,1,0,1200.0
+# Reference slew-rate of 200 A/s for ramp operation in SlowRef
+DSP_SRLim,1,0,200.0
 
 DSP_SRLim,1,1,50.0
 DSP_SRLim,1,2,50.0
@@ -24,8 +24,8 @@ DSP_LPF,2,1,0.0
 DSP_LPF,2,2,0.0
 DSP_LPF,2,3,0.0
 
-# Load current PI controller with 700 Hz closed-loop bandwidth
-DSP_PI,3,0,0.058388568460941315,14.710886869579554,0.949999988079071,-0.949999988079071
+# Load current PI controller with 300 Hz closed-loop bandwidth
+DSP_PI,3,0,3.2498276233673096,28.221504762768745,0.9,-0.9
 
 DSP_PI,3,1,0.0,0.0,0.0,0.0
 DSP_PI,3,2,0.0,0.0,0.0,0.0
@@ -37,12 +37,11 @@ DSP_PI,3,5,0.0,0.0,0.0,0.0
 DSP_IIR_2P2Z,4,0,1.0,0.0,0.0,0.0,0.0,3.4028234663852886e+38,-3.4028234663852886e+38,0.0
 
 # Reference feedforward controller with inverted dynamics of load and first-order LPF at 800 Hz
-DSP_IIR_2P2Z,4,1,0.06072312220931053,-0.06008898839354515,0.0,-0.8104138970375061,0.0,0.949999988079071,-0.949999988079071,0.0
+DSP_IIR_2P2Z,4,1,8.450422286987305,-8.447583198547363,0.0,-0.8104138970375061,0.0,0.9,-0.9,0.0
 
 # Bypassed filter for DC-Link voltage measurements
 DSP_IIR_2P2Z,4,2,1.0,0.0,0.0,0.0,0.0,3.4028234663852886e+38,-3.4028234663852886e+38,0.0
-
-DSP_IIR_2P2Z,4,3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+DSP_IIR_2P2Z,4,3,0.0,0.0,0.0,0.0,0.0,0.8999999761581421,-0.8999999761581421,0.0
 DSP_IIR_2P2Z,4,4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 DSP_IIR_2P2Z,4,5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 DSP_IIR_2P2Z,4,6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

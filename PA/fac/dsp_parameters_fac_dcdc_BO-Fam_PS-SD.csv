@@ -1,13 +1,13 @@
-# Control parameters for power supply from SF sextupoles family of booster.
+# Control parameters for power supply from SD sextupoles family of booster.
 # =============================================================================
 #
-# PS Name:  BO-Fam:PS-SF
+# PS Name:  BO-Fam:PS-SD
 # PS Model: FAC_DCDC
 #
 # Nominal operation point:
 #
-#   Load inductance:            0.0013 H
-#   Load resistance:            0.252 Ohm
+#   Load inductance:            0.00077 H
+#   Load resistance:            0.194 Ohm
 #   Load current:               149 A
 #   DC-Link voltage:            58 V
 #
@@ -25,7 +25,7 @@ DSP_LPF,2,2,0.0
 DSP_LPF,2,3,0.0
 
 # Load current PI controller with 700 Hz closed-loop bandwidth
-DSP_PI,3,0,0.09857810288667679,19.108987413346767,0.949999988079071,-0.949999988079071
+DSP_PI,3,0,0.058388568460941315,14.710886869579554,0.949999988079071,-0.949999988079071
 
 DSP_PI,3,1,0.0,0.0,0.0,0.0
 DSP_PI,3,2,0.0,0.0,0.0,0.0
@@ -37,12 +37,11 @@ DSP_PI,3,5,0.0,0.0,0.0,0.0
 DSP_IIR_2P2Z,4,0,1.0,0.0,0.0,0.0,0.0,3.4028234663852886e+38,-3.4028234663852886e+38,0.0
 
 # Reference feedforward controller with inverted dynamics of load and first-order LPF at 800 Hz
-DSP_IIR_2P2Z,4,1,0.10239610821008682,-0.10157238692045212,0.0,-0.8104138970375061,0.0,0.949999988079071,-0.949999988079071,0.0
+DSP_IIR_2P2Z,4,1,0.06072312220931053,-0.06008898839354515,0.0,-0.8104138970375061,0.0,0.949999988079071,-0.949999988079071,0.0
 
 # Bypassed filter for DC-Link voltage measurements
 DSP_IIR_2P2Z,4,2,1.0,0.0,0.0,0.0,0.0,3.4028234663852886e+38,-3.4028234663852886e+38,0.0
-
-DSP_IIR_2P2Z,4,3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+DSP_IIR_2P2Z,4,3,0.0,0.0,0.0,0.0,0.0,0.949999988079071,-0.949999988079071,0.0
 DSP_IIR_2P2Z,4,4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 DSP_IIR_2P2Z,4,5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 DSP_IIR_2P2Z,4,6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
